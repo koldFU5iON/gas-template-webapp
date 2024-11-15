@@ -1,11 +1,21 @@
 {
   "compilerOptions": {
-    "target": "ES6",
     "module": "ESNext",
+    "target": "ES6",
+    "lib": ["ESNext", "DOM"],
+    "outDir": "./dist/build",
+    "rootDir": "./app",
     "strict": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "downlevelIteration": true,
     "esModuleInterop": true,
-    "declaration": true, // Generates `.d.ts` files
-    "outDir": "./dist"
+    "skipLibCheck": true,
+    "types": ["google-apps-script"],
+    "typeRoots": ["./node_modules/@types", "./types"],
+    "importHelpers": true
   },
-  "include": ["src/**/*"]
+  "include": ["app/**/*.ts", "types/**/*.d.ts"],
+  "exclude": ["node_modules", "dist"]
 }
